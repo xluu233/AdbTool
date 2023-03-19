@@ -1,0 +1,40 @@
+<RCC>
+    <qresource prefix="/new/image">
+        <file>image/AndroidDeviceConnected.png.png</file>
+        <file>image/AndroidDeviceDisConnect.png</file>
+        <file>image/main_file.png</file>
+        <file>image/main_log.png</file>
+        <file>image/main_menu.png</file>
+        <file>image/main_setting.png</file>
+        <file>image/icon_clear_apk_data.png</file>
+        <file>image/icon_cur_activity.png</file>
+        <file>image/icon_delete_apk.png</file>
+        <file>image/icon_find_apkpath.png</file>
+        <file>image/icon_input_text.png</file>
+        <file>image/icon_install_apk.png</file>
+        <file>image/icon_reset_app_data.png</file>
+        <file>image/icon_restart_phone.png</file>
+        <file>image/icon_save_apk.png</file>
+        <file>image/icon_screenshot.png</file>
+        <file>image/icon_start_app.png</file>
+        <file>image/icon_stop_app.png</file>
+        <file>image/icon_clear_app_data.png</file>
+        <file>image/icon_setting.png</file>
+        <file>image/24gl-swapHorizontal3.png</file>
+        <file>image/home.png</file>
+        <file>image/icon_back.png</file>
+        <file>image/icon_detail.png</file>
+        <file>image/icon_id.png</file>
+        <file>image/icon_info.png</file>
+        <file>image/icon_ip.png</file>
+        <file>image/icon_mac.png</file>
+        <file>image/icon_menu.png</file>
+        <file>image/icon_power.png</file>
+        <file>image/icon_reduce.png</file>
+        <file>image/icon_restart.png</file>
+        <file>image/icon_video_end.png</file>
+        <file>image/icon_video_start.png</file>
+        <file>image/icon-add.png</file>
+        <file>image/icon_exit.png</file>
+    </qresource>
+</RCC>

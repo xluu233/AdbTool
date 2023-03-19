@@ -1,0 +1,1710 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1324</width>
+    <height>1050</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>AndroidAdbTool-Qt</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QWidget{
+	color:rgb(85, 170, 255)
+}
+</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <property name="styleSheet">
+    <string notr="true">QWidget{
+	background-color:rgb(240, 242, 255);
+}</string>
+   </property>
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0">
+     <widget class="QWidget" name="widget1" native="true">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Fixed" vsizetype="Expanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>200</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QWidget{
+	background-color:rgb(223, 224, 238);
+	border-radius:10px;
+}</string>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <item>
+        <widget class="QToolButton" name="btn_icon">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>100</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>Microsoft YaHei</family>
+           <pointsize>10</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QToolButton{
+	color:rgb(47, 47, 47);
+	font-size:10;
+	font-family:Microsoft YaHei; 
+	font-weight:bold;
+	padding:10px;
+margin-top:10px;
+margin-bottom:30px;
+	qproperty-icon: url(:/new/image/image/AndroidDeviceDisConnect.png) center;
+	qproperty-iconSize:60px 60px;
+}
+
+</string>
+         </property>
+         <property name="text">
+          <string>暂无设备连接</string>
+         </property>
+         <property name="icon">
+          <iconset resource="image.qrc">
+           <normaloff>:/new/image/image/AndroidDeviceDisConnect.png</normaloff>
+           <normalon>:/new/image/image/AndroidDeviceConnected.png.png</normalon>:/new/image/image/AndroidDeviceDisConnect.png</iconset>
+         </property>
+         <property name="toolButtonStyle">
+          <enum>Qt::ToolButtonTextUnderIcon</enum>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QToolButton" name="btn_menu">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="font">
+          <font>
+           <family>Microsoft YaHei</family>
+           <pointsize>10</pointsize>
+           <weight>50</weight>
+           <bold>false</bold>
+          </font>
+         </property>
+         <property name="layoutDirection">
+          <enum>Qt::LeftToRight</enum>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QToolButton{
+	color:rgb(47, 47, 47);
+	font-size:10;
+	font-family:Microsoft YaHei; 
+	font-weight:normal;
+	padding:10px;
+	qproperty-iconSize:40px 40px;
+    border: 3px solid rgb(255, 255, 255); 
+	border-radius: 10px;
+}
+QToolButton::hover {
+	color:rgb(47, 47, 47);
+	font-size:9;
+	font-family:Microsoft YaHei; 
+	font-weight:normal;
+	background-color:rgb(171, 171, 171);
+	padding:12px;
+	margin:3px;
+    border: 3px solid rgb(255, 255, 255); 
+	border-radius: 10px;
+}
+</string>
+         </property>
+         <property name="text">
+          <string>快捷功能</string>
+         </property>
+         <property name="icon">
+          <iconset resource="image.qrc">
+           <normaloff>:/new/image/image/main_menu.png</normaloff>:/new/image/image/main_menu.png</iconset>
+         </property>
+         <property name="toolButtonStyle">
+          <enum>Qt::ToolButtonTextBesideIcon</enum>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QToolButton" name="btn_file">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="font">
+          <font>
+           <family>Microsoft YaHei</family>
+           <pointsize>10</pointsize>
+           <weight>50</weight>
+           <bold>false</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QToolButton{
+	color:rgb(47, 47, 47);
+	font-size:10;
+	font-family:Microsoft YaHei; 
+	font-weight:normal;
+	padding:10px;
+	qproperty-iconSize:37px 37px;
+    border: 3px solid rgb(255, 255, 255); 
+	border-radius: 10px;
+}
+QToolButton::hover {
+	color:rgb(47, 47, 47);
+	font-size:9;
+	font-family:Microsoft YaHei; 
+	font-weight:normal;
+	background-color:rgb(171, 171, 171);
+	padding:12px;
+	margin:3px;
+    border: 3px solid rgb(255, 255, 255); 
+	border-radius: 10px;
+}
+</string>
+         </property>
+         <property name="text">
+          <string>文件管理</string>
+         </property>
+         <property name="icon">
+          <iconset resource="image.qrc">
+           <normaloff>:/new/image/image/main_file.png</normaloff>:/new/image/image/main_file.png</iconset>
+         </property>
+         <property name="toolButtonStyle">
+          <enum>Qt::ToolButtonTextBesideIcon</enum>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QToolButton" name="btn_log">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="font">
+          <font>
+           <family>Microsoft YaHei</family>
+           <pointsize>10</pointsize>
+           <weight>50</weight>
+           <bold>false</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QToolButton{
+	color:rgb(47, 47, 47);
+	font-size:10;
+	font-family:Microsoft YaHei; 
+	font-weight:normal;
+	padding:10px;
+	qproperty-iconSize:40px 40px;
+    border: 3px solid rgb(255, 255, 255); 
+	border-radius: 10px;
+}
+QToolButton::hover {
+	color:rgb(47, 47, 47);
+	font-size:9;
+	font-family:Microsoft YaHei; 
+	font-weight:normal;
+	background-color:rgb(171, 171, 171);
+	padding:12px;
+	margin:3px;
+    border: 3px solid rgb(255, 255, 255); 
+	border-radius: 10px;
+}
+</string>
+         </property>
+         <property name="text">
+          <string>LogCat</string>
+         </property>
+         <property name="icon">
+          <iconset resource="image.qrc">
+           <normaloff>:/new/image/image/main_log.png</normaloff>:/new/image/image/main_log.png</iconset>
+         </property>
+         <property name="toolButtonStyle">
+          <enum>Qt::ToolButtonTextBesideIcon</enum>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QToolButton" name="btn_setting">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="font">
+          <font>
+           <family>Microsoft YaHei</family>
+           <pointsize>10</pointsize>
+           <weight>50</weight>
+           <bold>false</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QToolButton{
+	color:rgb(47, 47, 47);
+	font-size:10;
+	font-family:Microsoft YaHei; 
+	font-weight:normal;
+	padding:10px;
+	qproperty-iconSize:38px 38px;
+    border: 3px solid rgb(255, 255, 255); 
+	border-radius: 10px;
+}
+QToolButton::hover {
+	color:rgb(47, 47, 47);
+	font-size:9;
+	font-family:Microsoft YaHei; 
+	font-weight:normal;
+	background-color:rgb(171, 171, 171);
+	padding:12px;
+	margin:3px;
+    border: 3px solid rgb(255, 255, 255); 
+	border-radius: 10px;
+}
+</string>
+         </property>
+         <property name="text">
+          <string>设置</string>
+         </property>
+         <property name="icon">
+          <iconset resource="image.qrc">
+           <normaloff>:/new/image/image/main_setting.png</normaloff>:/new/image/image/main_setting.png</iconset>
+         </property>
+         <property name="toolButtonStyle">
+          <enum>Qt::ToolButtonTextBesideIcon</enum>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="verticalSpacer">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item row="0" column="1">
+     <widget class="QStackedWidget" name="stackedWidget">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>1100</width>
+        <height>1000</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>16777215</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QStackWidget{
+	background-color:rgb(255, 255, 255);
+	border-radius:10px;
+}
+</string>
+      </property>
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="page_menu">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="autoFillBackground">
+        <bool>false</bool>
+       </property>
+       <property name="styleSheet">
+        <string notr="true"/>
+       </property>
+       <widget class="QLabel" name="label">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>941</width>
+          <height>451</height>
+         </rect>
+        </property>
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+       <widget class="QWidget" name="widget" native="true">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>1101</width>
+          <height>161</height>
+         </rect>
+        </property>
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="layoutDirection">
+         <enum>Qt::LeftToRight</enum>
+        </property>
+        <property name="autoFillBackground">
+         <bool>false</bool>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QWidget{
+	background-color:rgb(255, 255, 255);
+	border-radius:10px;
+	border: 1px solid rgb(223, 224, 238);
+}</string>
+        </property>
+        <layout class="QGridLayout" name="gridLayout_2">
+         <item row="1" column="0">
+          <widget class="QToolButton" name="btn_install_apk">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>200</width>
+             <height>80</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QToolButton{
+	font: 12pt &quot;楷体&quot;;
+	color:rgb(47, 47, 47);
+	qproperty-icon:url(:/new/image/image/icon_install_apk.png);
+	qproperty-iconSize:60px 60px;
+    border: none; 
+	border-radius: 10px;
+	padding-left:20px;
+	margin-left:20px;
+}
+QToolButton::hover {
+	background-color:rgba(171, 171, 171,50);
+}
+</string>
+           </property>
+           <property name="text">
+            <string>  安装应用</string>
+           </property>
+           <property name="toolButtonStyle">
+            <enum>Qt::ToolButtonTextBesideIcon</enum>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="0">
+          <widget class="QLabel" name="label_6">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>30</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <family>华文楷体</family>
+             <pointsize>13</pointsize>
+             <weight>75</weight>
+             <italic>false</italic>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QLabel{
+	font: 13pt &quot;华文楷体&quot;;
+	font-weight:bold;
+	color:rgb(85, 170, 255);
+	border:none;
+}</string>
+           </property>
+           <property name="text">
+            <string>▎常用功能</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QToolButton" name="btn_input_text">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>220</width>
+             <height>80</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QToolButton{
+	font: 12pt &quot;楷体&quot;;
+	color:rgb(47, 47, 47);
+	qproperty-icon:url(:/new/image/image/icon_input_text.png);
+	qproperty-iconSize:53px 53px;
+    border: none; 
+	border-radius: 10px;
+	padding-left:20px;
+	margin-left:20px;
+}
+QToolButton::hover {
+	background-color:rgba(171, 171, 171,50);
+}
+</string>
+           </property>
+           <property name="text">
+            <string>  输入文本</string>
+           </property>
+           <property name="toolButtonStyle">
+            <enum>Qt::ToolButtonTextBesideIcon</enum>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="2">
+          <widget class="QToolButton" name="btn_get_screenshot">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>230</width>
+             <height>80</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QToolButton{
+	font: 12pt &quot;楷体&quot;;
+	color:rgb(47, 47, 47);
+	qproperty-icon:url(:/new/image/image/icon_screenshot.png);
+	qproperty-iconSize:55px 55px;
+    border: none; 
+	border-radius: 10px;
+	padding-left:20px;
+	margin-left:20px;
+}
+QToolButton::hover {
+	background-color:rgba(171, 171, 171,50);
+}
+</string>
+           </property>
+           <property name="text">
+            <string>  截图保存</string>
+           </property>
+           <property name="toolButtonStyle">
+            <enum>Qt::ToolButtonTextBesideIcon</enum>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="3">
+          <widget class="QToolButton" name="btn_cur_activity">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>300</width>
+             <height>80</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QToolButton{
+	font: 12pt &quot;楷体&quot;;
+	color:rgb(47, 47, 47);
+	qproperty-icon:url(:/new/image/image/icon_cur_activity.png);
+	qproperty-iconSize:60px 60px;
+    border: none; 
+	border-radius: 10px;
+	padding-left:20px;
+	margin-left:20px;
+}
+QToolButton::hover {
+	background-color:rgba(171, 171, 171,50);
+}
+</string>
+           </property>
+           <property name="text">
+            <string>查看当前Activity</string>
+           </property>
+           <property name="toolButtonStyle">
+            <enum>Qt::ToolButtonTextBesideIcon</enum>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="widget_2" native="true">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>170</y>
+          <width>1101</width>
+          <height>281</height>
+         </rect>
+        </property>
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="layoutDirection">
+         <enum>Qt::LeftToRight</enum>
+        </property>
+        <property name="autoFillBackground">
+         <bool>false</bool>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QWidget{
+	background-color:rgb(255, 255, 255);
+	border-radius:10px;
+	border: 1px solid rgb(223, 224, 238);
+}</string>
+        </property>
+        <layout class="QGridLayout" name="gridLayout_3">
+         <item row="0" column="0">
+          <widget class="QLabel" name="label_7">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>30</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <family>华文楷体</family>
+             <pointsize>13</pointsize>
+             <weight>75</weight>
+             <italic>false</italic>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QLabel{
+	font: 13pt &quot;华文楷体&quot;;
+	font-weight:bold;
+	color:rgb(255, 170, 68);
+	border: none;
+}</string>
+           </property>
+           <property name="text">
+            <string>▎应用相关</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="0">
+          <widget class="QToolButton" name="btn_uninstall_app">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>200</width>
+             <height>80</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QToolButton{
+	font: 12pt &quot;楷体&quot;;
+	color:rgb(47, 47, 47);
+	qproperty-icon:url(:/new/image/image/icon_delete_apk.png);
+	qproperty-iconSize:60px 60px;
+    border: none; 
+	border-radius: 10px;
+	padding-left:20px;
+	margin-left:20px;
+}
+QToolButton::hover {
+	background-color:rgba(171, 171, 171,50);
+}
+</string>
+           </property>
+           <property name="text">
+            <string>  卸载应用</string>
+           </property>
+           <property name="toolButtonStyle">
+            <enum>Qt::ToolButtonTextBesideIcon</enum>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="4">
+          <widget class="QToolButton" name="btn_restart_app">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>300</width>
+             <height>80</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QToolButton{
+	font: 12pt &quot;楷体&quot;;
+	color:rgb(47, 47, 47);
+	qproperty-icon:url(:/new/image/image/icon_restart_phone.png);
+	qproperty-iconSize:45px 45px;
+    border: none; 
+	border-radius: 10px;
+	padding-left:20px;
+	margin-left:25px;
+}
+QToolButton::hover {
+	background-color:rgba(171, 171, 171,50);
+}
+</string>
+           </property>
+           <property name="text">
+            <string>  重启应用</string>
+           </property>
+           <property name="toolButtonStyle">
+            <enum>Qt::ToolButtonTextBesideIcon</enum>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="3">
+          <widget class="QToolButton" name="btn_stop_app">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>230</width>
+             <height>80</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QToolButton{
+	font: 12pt &quot;楷体&quot;;
+	color:rgb(47, 47, 47);
+	qproperty-icon:url(:/new/image/image/icon_stop_app.png);
+	qproperty-iconSize:55px 55px;
+    border: none; 
+	border-radius: 10px;
+	padding-left:20px;
+	margin-left:20px;
+}
+QToolButton::hover {
+	background-color:rgba(171, 171, 171,50);
+}
+</string>
+           </property>
+           <property name="text">
+            <string>  停止运行</string>
+           </property>
+           <property name="toolButtonStyle">
+            <enum>Qt::ToolButtonTextBesideIcon</enum>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="2">
+          <widget class="QToolButton" name="btn_start_app">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>220</width>
+             <height>80</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QToolButton{
+	font: 12pt &quot;楷体&quot;;
+	color:rgb(47, 47, 47);
+	qproperty-icon:url(:/new/image/image/icon_start_app.png);
+	qproperty-iconSize:50px 50px;
+    border: none; 
+	border-radius: 10px;
+	padding-left:20px;
+	margin-left:25px;
+}
+QToolButton::hover {
+	background-color:rgba(171, 171, 171,50);
+}
+</string>
+           </property>
+           <property name="text">
+            <string>  启动应用</string>
+           </property>
+           <property name="toolButtonStyle">
+            <enum>Qt::ToolButtonTextBesideIcon</enum>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="0" colspan="2">
+          <widget class="QToolButton" name="btn_clear_app_data">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>200</width>
+             <height>80</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QToolButton{
+	font: 12pt &quot;楷体&quot;;
+	color:rgb(47, 47, 47);
+	qproperty-icon:url(:/new/image/image/icon_clear_apk_data.png);
+	qproperty-iconSize:50px 50px;
+    border: none; 
+	border-radius: 10px;
+	padding-left:20px;
+	margin-left:20px;
+}
+QToolButton::hover {
+	background-color:rgba(171, 171, 171,50);
+}
+</string>
+           </property>
+           <property name="text">
+            <string>  清除App数据</string>
+           </property>
+           <property name="toolButtonStyle">
+            <enum>Qt::ToolButtonTextBesideIcon</enum>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="2">
+          <widget class="QToolButton" name="btn_get_apk_path">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>200</width>
+             <height>80</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QToolButton{
+	font: 12pt &quot;楷体&quot;;
+	color:rgb(47, 47, 47);
+	qproperty-icon:url(:/new/image/image/icon_detail.png);
+	qproperty-iconSize:50px 50px;
+    border: none; 
+	border-radius: 10px;
+	padding-left:20px;
+	margin-left:20px;
+}
+QToolButton::hover {
+	background-color:rgba(171, 171, 171,50);
+}
+</string>
+           </property>
+           <property name="text">
+            <string>  应用安装路径</string>
+           </property>
+           <property name="toolButtonStyle">
+            <enum>Qt::ToolButtonTextBesideIcon</enum>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="3">
+          <widget class="QToolButton" name="btn_get_apk">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>200</width>
+             <height>80</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QToolButton{
+	font: 12pt &quot;楷体&quot;;
+	color:rgb(47, 47, 47);
+	qproperty-icon:url(:/new/image/image/icon_install_apk.png);
+	qproperty-iconSize:55px 55px;
+    border: none; 
+	border-radius: 10px;
+	padding-left:20px;
+	margin-left:20px;
+}
+QToolButton::hover {
+	background-color:rgba(171, 171, 171,50);
+}
+</string>
+           </property>
+           <property name="text">
+            <string>  保存APK</string>
+           </property>
+           <property name="toolButtonStyle">
+            <enum>Qt::ToolButtonTextBesideIcon</enum>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="widget_3" native="true">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>460</y>
+          <width>1101</width>
+          <height>291</height>
+         </rect>
+        </property>
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="layoutDirection">
+         <enum>Qt::LeftToRight</enum>
+        </property>
+        <property name="autoFillBackground">
+         <bool>false</bool>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QWidget{
+	background-color:rgb(255, 255, 255);
+	border-radius:10px;
+	border: 1px solid rgb(223, 224, 238);
+}</string>
+        </property>
+        <layout class="QGridLayout" name="gridLayout_4">
+         <item row="3" column="1">
+          <widget class="QToolButton" name="btn_get_android_id">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>220</width>
+             <height>80</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QToolButton{
+	font: 12pt &quot;楷体&quot;;
+	color:rgb(47, 47, 47);
+	qproperty-icon:url(:/new/image/image/icon_id.png);
+	qproperty-iconSize:50px 50px;
+    border: none; 
+	border-radius: 10px;
+	padding-left:20px;
+	margin-left:20px;
+}
+QToolButton::hover {
+	background-color:rgba(171, 171, 171,50);
+}
+</string>
+           </property>
+           <property name="text">
+            <string>查看AndroidId</string>
+           </property>
+           <property name="toolButtonStyle">
+            <enum>Qt::ToolButtonTextBesideIcon</enum>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="3">
+          <widget class="QToolButton" name="btn_get_mac">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>300</width>
+             <height>80</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QToolButton{
+	font: 12pt &quot;楷体&quot;;
+	color:rgb(47, 47, 47);
+	qproperty-icon:url(:/new/image/image/icon_mac.png);
+	qproperty-iconSize:50px 50px;
+    border: none; 
+	border-radius: 10px;
+	padding-left:20px;
+	margin-left:20px;
+}
+QToolButton::hover {
+	background-color:rgba(171, 171, 171,50);
+}
+</string>
+           </property>
+           <property name="text">
+            <string>查看Mac地址</string>
+           </property>
+           <property name="toolButtonStyle">
+            <enum>Qt::ToolButtonTextBesideIcon</enum>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="0">
+          <widget class="QToolButton" name="btn_get_ip">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>200</width>
+             <height>80</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QToolButton{
+	font: 12pt &quot;楷体&quot;;
+	color:rgb(47, 47, 47);
+	qproperty-icon:url(:/new/image/image/icon_ip.png);
+	qproperty-iconSize:50px 50px;
+    border: none; 
+	border-radius: 10px;
+	padding-left:20px;
+	margin-left:20px;
+}
+QToolButton::hover {
+	background-color:rgba(171, 171, 171,50);
+}
+</string>
+           </property>
+           <property name="text">
+            <string>查看IP地址</string>
+           </property>
+           <property name="toolButtonStyle">
+            <enum>Qt::ToolButtonTextBesideIcon</enum>
+           </property>
+          </widget>
+         </item>
+         <item row="5" column="0">
+          <widget class="QToolButton" name="btn_restart_phone">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>200</width>
+             <height>80</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QToolButton{
+	font: 12pt &quot;楷体&quot;;
+	color:rgb(47, 47, 47);
+	qproperty-icon:url(:/new/image/image/icon_restart.png);
+	qproperty-iconSize:50px 50px;
+    border: none; 
+	border-radius: 10px;
+	padding-left:20px;
+	margin-left:20px;
+}
+QToolButton::hover {
+	background-color:rgba(171, 171, 171,50);
+}
+</string>
+           </property>
+           <property name="text">
+            <string>重启手机</string>
+           </property>
+           <property name="toolButtonStyle">
+            <enum>Qt::ToolButtonTextBesideIcon</enum>
+           </property>
+          </widget>
+         </item>
+         <item row="5" column="2">
+          <widget class="QToolButton" name="btn_start_video">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>200</width>
+             <height>80</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QToolButton{
+	font: 12pt &quot;楷体&quot;;
+	color:rgb(47, 47, 47);
+	qproperty-icon:url(:/new/image/image/icon_video_start.png);
+	qproperty-iconSize:60px 60px;
+    border: none; 
+	border-radius: 10px;
+	padding-left:20px;
+	margin-left:20px;
+}
+QToolButton::hover {
+	background-color:rgba(171, 171, 171,50);
+}
+</string>
+           </property>
+           <property name="text">
+            <string>开始录屏</string>
+           </property>
+           <property name="toolButtonStyle">
+            <enum>Qt::ToolButtonTextBesideIcon</enum>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="2">
+          <widget class="QToolButton" name="btn_get_android_version">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>230</width>
+             <height>80</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QToolButton{
+	font: 12pt &quot;楷体&quot;;
+	color:rgb(47, 47, 47);
+	qproperty-icon:url(:/new/image/image/AndroidDeviceDisConnect.png);
+	qproperty-iconSize:55px 55px;
+    border: none; 
+	border-radius: 10px;
+	padding-left:20px;
+	margin-left:20px;
+}
+QToolButton::hover {
+	background-color:rgba(171, 171, 171,50);
+}
+</string>
+           </property>
+           <property name="text">
+            <string>查看系统版本</string>
+           </property>
+           <property name="toolButtonStyle">
+            <enum>Qt::ToolButtonTextBesideIcon</enum>
+           </property>
+          </widget>
+         </item>
+         <item row="5" column="1">
+          <widget class="QToolButton" name="btn_get_sys_info">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>200</width>
+             <height>80</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QToolButton{
+	font: 12pt &quot;楷体&quot;;
+	color:rgb(47, 47, 47);
+	qproperty-icon:url(:/new/image/image/icon_info.png);
+	qproperty-iconSize:50px 50px;
+    border: none; 
+	border-radius: 10px;
+	padding-left:20px;
+	margin-left:20px;
+}
+QToolButton::hover {
+	background-color:rgba(171, 171, 171,50);
+}
+</string>
+           </property>
+           <property name="text">
+            <string>查看系统属性</string>
+           </property>
+           <property name="toolButtonStyle">
+            <enum>Qt::ToolButtonTextBesideIcon</enum>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0" colspan="2">
+          <widget class="QLabel" name="label_8">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>30</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <family>华文楷体</family>
+             <pointsize>13</pointsize>
+             <weight>75</weight>
+             <italic>false</italic>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QLabel{
+	font: 13pt &quot;华文楷体&quot;;
+	font-weight:bold;
+	color:rgb(170, 0, 0);
+	border: none;
+}</string>
+           </property>
+           <property name="text">
+            <string>▎系统相关</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="widget_4" native="true">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>760</y>
+          <width>1101</width>
+          <height>271</height>
+         </rect>
+        </property>
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="layoutDirection">
+         <enum>Qt::LeftToRight</enum>
+        </property>
+        <property name="autoFillBackground">
+         <bool>false</bool>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QWidget{
+	background-color:rgb(255, 255, 255);
+	border-radius:10px;
+	border: 1px solid rgb(223, 224, 238);
+}</string>
+        </property>
+        <layout class="QGridLayout" name="gridLayout_5">
+         <item row="2" column="1">
+          <widget class="QToolButton" name="btn_reback">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>220</width>
+             <height>80</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QToolButton{
+	font: 12pt &quot;楷体&quot;;
+	color:rgb(47, 47, 47);
+	qproperty-icon:url(:/new/image/image/icon_back.png);
+	qproperty-iconSize:50px 50px;
+    border: none; 
+	border-radius: 10px;
+	padding-left:20px;
+	margin-left:20px;
+}
+QToolButton::hover {
+	background-color:rgba(171, 171, 171,50);
+}
+</string>
+           </property>
+           <property name="text">
+            <string>  返回键</string>
+           </property>
+           <property name="toolButtonStyle">
+            <enum>Qt::ToolButtonTextBesideIcon</enum>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="3">
+          <widget class="QToolButton" name="btn_power">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>300</width>
+             <height>80</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QToolButton{
+	font: 12pt &quot;楷体&quot;;
+	color:rgb(47, 47, 47);
+	qproperty-icon:url(:/new/image/image/icon_exit.png);
+	qproperty-iconSize:50px 50px;
+    border: none; 
+	border-radius: 10px;
+	padding-left:20px;
+	margin-left:20px;
+}
+QToolButton::hover {
+	background-color:rgba(171, 171, 171,50);
+}
+</string>
+           </property>
+           <property name="text">
+            <string>  电源键</string>
+           </property>
+           <property name="toolButtonStyle">
+            <enum>Qt::ToolButtonTextBesideIcon</enum>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="0">
+          <widget class="QToolButton" name="btn_home">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>200</width>
+             <height>80</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QToolButton{
+	font: 12pt &quot;楷体&quot;;
+	color:rgb(47, 47, 47);
+	qproperty-icon:url(:/new/image/image/home.png);
+	qproperty-iconSize:40px 40px;
+    border: none; 
+	border-radius: 10px;
+	padding-left:20px;
+	margin-left:20px;
+}
+QToolButton::hover {
+	background-color:rgba(171, 171, 171,50);
+}
+</string>
+           </property>
+           <property name="text">
+            <string>   Home键</string>
+           </property>
+           <property name="toolButtonStyle">
+            <enum>Qt::ToolButtonTextBesideIcon</enum>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="1">
+          <widget class="QToolButton" name="btn_reduce_volum">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>200</width>
+             <height>80</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QToolButton{
+	font: 12pt &quot;楷体&quot;;
+	color:rgb(47, 47, 47);
+	qproperty-icon:url(:/new/image/image/icon_reduce.png);
+	qproperty-iconSize:60px 60px;
+    border: none; 
+	border-radius: 10px;
+	padding-left:20px;
+	margin-left:20px;
+}
+QToolButton::hover {
+	background-color:rgba(171, 171, 171,50);
+}
+</string>
+           </property>
+           <property name="text">
+            <string> 降低音量</string>
+           </property>
+           <property name="toolButtonStyle">
+            <enum>Qt::ToolButtonTextBesideIcon</enum>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0" colspan="2">
+          <widget class="QLabel" name="label_9">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>30</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <family>华文楷体</family>
+             <pointsize>13</pointsize>
+             <weight>75</weight>
+             <italic>false</italic>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QLabel{
+	font: 13pt &quot;华文楷体&quot;;
+	font-weight:bold;
+	color:rgb(170, 170, 0);
+	border: none;
+}</string>
+           </property>
+           <property name="text">
+            <string>▎按键相关</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="2">
+          <widget class="QToolButton" name="btn_menu_2">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>230</width>
+             <height>80</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QToolButton{
+	font: 12pt &quot;楷体&quot;;
+	color:rgb(47, 47, 47);
+	qproperty-icon:url(:/new/image/image/icon_menu.png);
+	qproperty-iconSize:55px 55px;
+    border: none; 
+	border-radius: 10px;
+	padding-left:20px;
+	margin-left:20px;
+}
+QToolButton::hover {
+	background-color:rgba(171, 171, 171,50);
+}
+</string>
+           </property>
+           <property name="text">
+            <string>  菜单键</string>
+           </property>
+           <property name="toolButtonStyle">
+            <enum>Qt::ToolButtonTextBesideIcon</enum>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="0">
+          <widget class="QToolButton" name="btn_add_volum">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>200</width>
+             <height>80</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QToolButton{
+	font: 12pt &quot;楷体&quot;;
+	color:rgb(47, 47, 47);
+	qproperty-icon:url(:/new/image/image/icon-add.png);
+	qproperty-iconSize:50px 50px;
+    border: none; 
+	border-radius: 10px;
+	padding-left:20px;
+	margin-left:20px;
+}
+QToolButton::hover {
+	background-color:rgba(171, 171, 171,50);
+}
+</string>
+           </property>
+           <property name="text">
+            <string>  增加音量</string>
+           </property>
+           <property name="toolButtonStyle">
+            <enum>Qt::ToolButtonTextBesideIcon</enum>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="2">
+          <widget class="QToolButton" name="btn_change_app">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>200</width>
+             <height>80</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QToolButton{
+	font: 12pt &quot;楷体&quot;;
+	color:rgb(47, 47, 47);
+	qproperty-icon:url(:/new/image/image/24gl-swapHorizontal3.png);
+	qproperty-iconSize:50px 50px;
+    border: none; 
+	border-radius: 10px;
+	padding-left:20px;
+	margin-left:26px;
+}
+QToolButton::hover {
+	background-color:rgba(171, 171, 171,50);
+}
+</string>
+           </property>
+           <property name="text">
+            <string>  切换应用</string>
+           </property>
+           <property name="toolButtonStyle">
+            <enum>Qt::ToolButtonTextBesideIcon</enum>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="page_file">
+       <property name="styleSheet">
+        <string notr="true">QWidget{
+	background-color:rgba(255, 255, 255, 0);
+	border:none;
+}</string>
+       </property>
+       <widget class="QLabel" name="label_2">
+        <property name="geometry">
+         <rect>
+          <x>140</x>
+          <y>260</y>
+          <width>54</width>
+          <height>12</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>文件管理</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="page_log">
+       <property name="styleSheet">
+        <string notr="true">QWidget{
+	background-color:rgb(229, 229, 229);
+	border-radius:10px;
+}</string>
+       </property>
+       <widget class="QLabel" name="label_3">
+        <property name="geometry">
+         <rect>
+          <x>140</x>
+          <y>260</y>
+          <width>54</width>
+          <height>12</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>日志</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="page_setting">
+       <property name="styleSheet">
+        <string notr="true">QWidget{
+	background-color:rgb(255, 255, 255);
+	border-radius:10px;
+}</string>
+       </property>
+       <widget class="QLabel" name="label_4">
+        <property name="geometry">
+         <rect>
+          <x>150</x>
+          <y>260</y>
+          <width>54</width>
+          <height>12</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>设置</string>
+        </property>
+       </widget>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources>
+  <include location="image.qrc"/>
+ </resources>
+ <connections/>
+</ui>
