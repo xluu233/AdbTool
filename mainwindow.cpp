@@ -9,6 +9,7 @@
 #include <QToolButton>
 #include "iconhelper.h"
 #include <QGridLayout>
+#include <string>
 
 
 MainWindow::MainWindow(QWidget *parent)
@@ -17,6 +18,7 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
     initMenu();
+    initSetting();
 }
 
 MainWindow::~MainWindow()
@@ -105,7 +107,32 @@ void MainWindow::initMenu()
 //    gridLayout->setColumnStretch(3,3);
 //    vlayout_main->addLayout(gridLayout);
 
-//    ui->vlayout_menu->addLayout(vlayout_main);
+    //    ui->vlayout_menu->addLayout(vlayout_main);
+}
+
+void MainWindow::initSetting()
+{
+    ui->adb_edit->setPlaceholderText("请输入或选择ADB路径");
+
+
+    QString adb = AdbTool::getInstance()->autoDetachAdb();
+    setAdbPath(adb);
+
+    //手动选择adb路径
+    connect(ui->btn_select_adb_path,&QToolButton::clicked,this,[=](){
+        QString str = QFileDialog::getOpenFileName(this,"open file","/","adb (*.exe);;");
+        if(!str.isEmpty()){
+            QString adb = str.toUtf8();
+            setAdbPath(adb);
+        }
+    });
+}
+
+
+void MainWindow::setAdbPath(QString adb)
+{
+    AdbTool::getInstance()->setAdbPath(adb);
+    ui->adb_edit->setText(adb);
 }
 
 
@@ -266,3 +293,8 @@ void MainWindow::on_btn_reback_clicked()
     qDebug() << "返回按键";
 }
 
+
+//void MainWindow::on_btn_select_adb_path_clicked()
+//{
+//    qDebug() << "选择ADB文件";
+//}

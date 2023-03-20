@@ -36,5 +36,6 @@
         <file>image/icon_video_start.png</file>
         <file>image/icon-add.png</file>
         <file>image/icon_exit.png</file>
+        <file>image/icon_file.png</file>
     </qresource>
 </RCC>

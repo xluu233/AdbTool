@@ -16,6 +16,13 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+
+    void initMenu();
+
+    //初始化设置页面
+    void initSetting();
+
+
 private slots:
     void on_btn_menu_clicked();
 
@@ -77,9 +84,12 @@ private slots:
 
     void on_btn_reduce_volum_clicked();
 
+//    void on_btn_select_adb_path_clicked();
+
 private:
     Ui::MainWindow *ui;
 
-    void initMenu();
+    void setAdbPath(QString adb);
+
 };
 #endif // MAINWINDOW_H

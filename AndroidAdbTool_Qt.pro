@@ -18,6 +18,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
     adblistview.cpp \
     adbtool.cpp \
+    designtool.cpp \
     iconhelper.cpp \
     main.cpp \
     mainwindow.cpp
@@ -25,6 +26,7 @@ SOURCES += \
 HEADERS += \
     adblistview.h \
     adbtool.h \
+    designtool.h \
     iconhelper.h \
     mainwindow.h
 
