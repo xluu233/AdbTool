@@ -19,6 +19,7 @@ SOURCES += \
     adblistview.cpp \
     adbtool.cpp \
     designtool.cpp \
+    devicelistdialog.cpp \
     iconhelper.cpp \
     main.cpp \
     mainwindow.cpp
@@ -27,13 +28,13 @@ HEADERS += \
     adblistview.h \
     adbtool.h \
     designtool.h \
+    devicelistdialog.h \
     iconhelper.h \
     mainwindow.h
 
 FORMS += \
-    form.ui \
-    mainwindow.ui \
-    menu.ui
+    devicelistdialog.ui \
+    mainwindow.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

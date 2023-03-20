@@ -8,6 +8,7 @@
 #include <QHBoxLayout>
 #include <QToolButton>
 #include "iconhelper.h"
+#include "mainwindow.h"
 #include <QGridLayout>
 #include <string>
 
@@ -70,53 +71,17 @@ void MainWindow::initMenu()
 {
     ui->stackedWidget->setCurrentIndex(0);
 
-//    ui->scrollArea->setWidget();
 
 
-//    QList<QString> titles;
-//    titles.append("快捷功能");
-//    titles.append("文件管理");
-//    titles.append("LogCat");
-//    titles.append("设置");
-
-//    QList<QString> icons;
-//    icons.append(":/new/image/image/main_menu.png");
-//    icons.append(":/new/image/image/main_file.png");
-//    icons.append(":/new/image/image/main_log.png");
-//    icons.append(":/new/image/image/main_setting.png");
-
-//    QVBoxLayout *vlayout_main = new QVBoxLayout;
-//    QLabel *title_main = new QLabel;
-//    title_main->setText("▎常用功能");
-//    title_main->setMargin(10);
-//    title_main->setStyleSheet("QLabel{color:rgb(255,228,196);font-weight:bold}");
-//    vlayout_main->addWidget(title_main);
-
-//    QGridLayout *gridLayout = new QGridLayout;
-//    gridLayout->addWidget(&getListBtn(":/new/image/image/main_menu.png","安装应用"),0,0);
-//    gridLayout->addWidget(&getListBtn(":/new/image/image/main_menu.png","安装应用2"),0,1);
-//    gridLayout->addWidget(&getListBtn(":/new/image/image/main_menu.png","安装应用3"),0,2);
-//    gridLayout->setColumnMinimumWidth(0,300);
-//    gridLayout->setVerticalSpacing(100);
-//    gridLayout->setAlignment(Qt::AlignCenter);
-//    gridLayout->setRowStretch(0,1);
-
-
-
-//    gridLayout->setRowStretch(3,3);
-//    gridLayout->setColumnStretch(3,3);
-//    vlayout_main->addLayout(gridLayout);
-
-    //    ui->vlayout_menu->addLayout(vlayout_main);
 }
 
 void MainWindow::initSetting()
 {
     ui->adb_edit->setPlaceholderText("请输入或选择ADB路径");
 
+    connect(AdbTool::getInstance(),&AdbTool::initAdb,this,&MainWindow::setAdbPath);
 
-    QString adb = AdbTool::getInstance()->autoDetachAdb();
-    setAdbPath(adb);
+    AdbTool::getInstance()->autoDetachAdb();
 
     //手动选择adb路径
     connect(ui->btn_select_adb_path,&QToolButton::clicked,this,[=](){
@@ -129,10 +94,44 @@ void MainWindow::initSetting()
 }
 
 
-void MainWindow::setAdbPath(QString adb)
+
+void MainWindow::setAdbPath(const QString& adb)
 {
+    qDebug() << "setAdbPath:" << adb;
+
+    //设置adb路径
     AdbTool::getInstance()->setAdbPath(adb);
     ui->adb_edit->setText(adb);
+
+    connect(AdbTool::getInstance(),&AdbTool::initDeviceList,this,&MainWindow::setCurDevice);
+
+    //初始化Android设备
+    AdbTool::getInstance()->getDeviceList();
+}
+
+void MainWindow::setCurDevice(const QStringList& dl)
+{
+    qDebug() << "setCurDevice:" << dl;
+    if(dl.empty()){
+        AdbTool::getInstance()->curDevice = "";
+        //未连接
+        ui->btn_icon->setText("暂无设备连接");
+        ui->btn_icon->setIcon(QIcon(":/new/image/image/AndroidDeviceDisConnect.png"));
+        return;
+    }
+
+    QString device = dl.at(0);
+    AdbTool::getInstance()->setCurDevice(device);
+    if(device.size() != 0){
+        //设备正常
+        auto title = QString("当前设备：\n%1").arg(device);
+        ui->btn_icon->setText(title);
+        ui->btn_icon->setIcon(QIcon(":/new/image/image/AndroidDeviceConnected.png.png"));
+    }else{
+        //未连接
+        ui->btn_icon->setText("暂无设备连接");
+        ui->btn_icon->setIcon(QIcon(":/new/image/image/AndroidDeviceDisConnect.png"));
+    }
 }
 
 
@@ -163,7 +162,17 @@ void MainWindow::on_btn_setting_clicked()
 void MainWindow::on_btn_icon_clicked()
 {
     qDebug() << "设备按钮被点击";
-
+    if(AdbTool::getInstance()->getAdbPath().size() == 0){
+        AdbTool::getInstance()->autoDetachAdb();
+    }
+    else
+    {
+        QStringList dl = AdbTool::getInstance()->getDeviceList();
+        //展示设备列表
+        DeviceListDialog *dl_dialog = new DeviceListDialog();
+        dl_dialog->setList(dl);
+        dl_dialog->show();
+    }
 }
 
 void MainWindow::on_btn_install_apk_clicked()

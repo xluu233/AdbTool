@@ -3,9 +3,12 @@
 
 #include <QMainWindow>
 #include <string>
+#include <devicelistdialog.h>
 
 QT_BEGIN_NAMESPACE
-namespace Ui { class MainWindow; }
+namespace Ui {
+    class MainWindow;
+}
 QT_END_NAMESPACE
 
 class MainWindow : public QMainWindow
@@ -86,10 +89,12 @@ private slots:
 
 //    void on_btn_select_adb_path_clicked();
 
+    void setAdbPath(const QString& adb);
+
+    void setCurDevice(const QStringList& dl);
+
 private:
     Ui::MainWindow *ui;
-
-    void setAdbPath(QString adb);
 
 };
 #endif // MAINWINDOW_H

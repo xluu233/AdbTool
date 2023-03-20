@@ -10,8 +10,9 @@
 
 using namespace std;
 
-class AdbTool
+class AdbTool : public QObject
 {
+    Q_OBJECT
 public:
     AdbTool();
 
@@ -19,7 +20,7 @@ public:
 
     static QString adbPath;
 
-    bool isDeviceConnected();
+    static QString curDevice;
 
     std::string getDeviceName(const std::string &id);
 
@@ -36,9 +37,18 @@ public:
     QStringList runCmdWithList(const QString& c);
     QStringList runCmdWithList(const QStringList& cl);
 
+    static QString getCurDevice();
+    static void setCurDevice(const QString &value);
+
+    QStringList getDeviceList();
+
+signals:
+    void initAdb(const QString& adb);
+    void initDeviceList(const QStringList& deviceList);
+
 private:
     static AdbTool *p;
-    bool deviceConnected = false;
+
 
 };
 
