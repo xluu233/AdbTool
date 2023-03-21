@@ -4,6 +4,8 @@
 #include <QMainWindow>
 #include <string>
 #include <devicelistdialog.h>
+#include <messagedialog.h>
+#include "applistdialog.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -25,6 +27,11 @@ public:
     //初始化设置页面
     void initSetting();
 
+    //是否正在录屏
+    bool isRecording = false;
+    QString recordFileName = "";
+
+    void showMessage(const QString& str);
 
 private slots:
     void on_btn_menu_clicked();

@@ -18,23 +18,29 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
     adblistview.cpp \
     adbtool.cpp \
+    applistdialog.cpp \
     designtool.cpp \
     devicelistdialog.cpp \
     iconhelper.cpp \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    messagedialog.cpp
 
 HEADERS += \
     adblistview.h \
     adbtool.h \
+    applistdialog.h \
     designtool.h \
     devicelistdialog.h \
     iconhelper.h \
-    mainwindow.h
+    mainwindow.h \
+    messagedialog.h
 
 FORMS += \
+    applistdialog.ui \
     devicelistdialog.ui \
-    mainwindow.ui
+    mainwindow.ui \
+    messagedialog.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
